@@ -20,18 +20,6 @@ const favSlice = createSlice({
             state.id = localStorage.getItem('ID') || '';
         }
     }
-    //,
-    // extraReducers: (builder) => {
-    //     builder
-    //         .addCase(saveAsync.fulfilled, (state, action) => {
-    //             state.id = action.payload;
-    //             localStorage.setItem('ID', state.id);
-    //         })
-    //         .addCase(saveAsync.rejected, (state) => {
-    //             state.id = '';
-    //             localStorage.clear();
-    //         });
-    // }
 });
 
 export const selectID = (state) => state.favourite.id;

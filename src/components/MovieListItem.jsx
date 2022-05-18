@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {addMovie} from  "../feautures/favListSlice";
 import styles from './MovieListItem.module.css';
 
-export default function MovieItem({ movie })  {
+export default function MovieItem({ movie, disable })  {
     const dispatch = useDispatch();    
 
     const handleAdd = () =>{
@@ -20,7 +20,8 @@ export default function MovieItem({ movie })  {
             <img className={styles.poster} src={movie.Poster} alt={movie.imdbID} />
             <div className="movie-item__info">
                 <h3 className="movie-item__title">{movie.Title} {`(${movie.Year})`}</h3>
-                <button type="button" className="movie-item__add-button" onClick = {handleAdd}>Add to favorite list ⭐</button>
+                <p>{disable}</p>
+                <button type="button" className="movie-item__add-button" disabled={disable} onClick = {handleAdd}>Add to favorite list ⭐</button>
             </div>
         </div>
 
