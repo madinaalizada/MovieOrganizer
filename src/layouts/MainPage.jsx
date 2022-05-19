@@ -3,6 +3,7 @@ import api from "../api";
 import Search from "../components/SearchForm";
 import MovieList from "../components/MovieList";
 import Favorites from "../components/Favourites";
+import FavListItem from "../components/FavListItem";
 
 export default function MainPage() {
   const [films, setFilms] = useState([]);

@@ -8,7 +8,8 @@ export const listSlice = createSlice({
             const newItem = {
                 id: action.payload.id,
                 title: action.payload.title,
-                year: action.payload.year
+                year: action.payload.year,
+                poster: action.payload.poster
             }
             if(state.every(f => f.id !== newItem.id)) {
                 state.push(newItem);
