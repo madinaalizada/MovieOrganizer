@@ -19,6 +19,20 @@
 @media (max-width: 530px) {
     .mainPage {
         flex-direction: column;
-        padding: 20px auto;
+        justify-content: center;
+        align-content: center;
+    }
+    .movies {
+        width: 70%;
+    }
+    .favorites {
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 320px) {
+    .mainPage {
+        padding: 5px 10px;
+        align-content: flex-start;
     }
 }
