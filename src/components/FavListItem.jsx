@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
+import config from "../config.json";
 
 const FavListItem = ({ id, poster, title, year }) => {
 
   return (
     <>
-      <a href={"https://www.imdb.com/title/" + `${id}` + "/"} target="_blank">
-        <img src={poster} alt="" style={{ width: "50px" }} />
+      <a href={config.moviesUrl + id + "/"} target="_blank">
+        <img src={poster} alt=""/>
       </a>
       <p>
         {title} --- {id}

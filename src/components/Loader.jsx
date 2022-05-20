@@ -10,7 +10,7 @@ const Loader = () => {
       <div className="shadow"></div>
       <div className="shadow"></div>
       <div className="shadow"></div>
-      <span>No contents yet ... </span>
+      <span>No content yet ... </span>
     </div>
   );
 };

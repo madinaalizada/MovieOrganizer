@@ -12,26 +12,34 @@ export default function MovieItem({ movie, disable }) {
         id: movie.imdbID,
         title: movie.Title,
         year: movie.Year,
-        poster: movie.Poster
+        poster: movie.Poster,
       })
     );
   };
 
   return (
     <div className={styles.cardFilm}>
-      <img className={styles.poster} src={movie.Poster} alt={movie.Title} />
-      <div className="movie-item__info">
-        <h3 className="movie-item__title">
+      <img
+        src={movie.Poster}
+        className={styles.poster}
+        onError={(e) => (
+          (e.target.onerror = null),
+          (e.target.src =
+            "https://cringemdb.com/img/movie-poster-placeholder.png")
+        )}
+      />
+
+      <div >
+        <h3 className={styles.movieInfo}>
           {movie.Title} {`(${movie.Year})`}
         </h3>
-        <p>{disable}</p>
         <button
           type="button"
-          className="movie-item__add-button"
+          className={styles.addBtn}
           disabled={disable}
           onClick={handleAdd}
         >
-          Add to favorite list ⭐
+          Add to favorite ⭐
         </button>
       </div>
     </div>
