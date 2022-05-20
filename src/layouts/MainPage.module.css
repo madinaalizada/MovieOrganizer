@@ -1,0 +1,24 @@
+.mainPage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 25px 5%;
+    justify-content: space-around;
+}
+
+.movies {
+    width: 50%;
+    min-width: 100px;
+}
+
+.favorites {
+    width: 40%;
+    min-width: 150px;
+}
+
+@media (max-width: 530px) {
+    .mainPage {
+        flex-direction: column;
+        padding: 20px auto;
+    }
+}

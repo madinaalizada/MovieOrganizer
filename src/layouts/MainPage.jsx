@@ -3,7 +3,8 @@ import api from "../api";
 import Search from "../components/SearchForm";
 import MovieList from "../components/MovieList";
 import Favorites from "../components/Favourites";
-import FavListItem from "../components/FavListItem";
+import styles from "./MainPage.module.css";
+import alertify from "alertifyjs";
 
 export default function MainPage() {
   const [films, setFilms] = useState([]);
@@ -16,23 +17,19 @@ export default function MainPage() {
     try {
       const response = await api.getFilms(searchStr);
       setFilms(response.Search);
-      console.log(response.Search);
     } catch (error) {
-      console.log(error);
+      alertify.error(error.toString());
     }
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div style={{width: '500px'}}>
-          <Search onSearch={onSearchHandle} />
-          <MovieList movies={films} />
-        </div>
-
-        <div style={{width: '200px'}}>
-          <Favorites />
-        </div>
+    <div className={styles.mainPage}>
+      <div className={styles.movies}>
+        <Search onSearch={onSearchHandle} />
+        <MovieList movies={films} />
+      </div>
+      <div className={styles.favorites}>
+        <Favorites />
       </div>
     </div>
   );

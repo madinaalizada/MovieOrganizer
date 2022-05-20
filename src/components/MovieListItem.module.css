@@ -1,10 +1,9 @@
-.container {
-    background-color: rgb(210, 214, 202);
-}
-
 .cardFilm{
-    width: 480px;
+    width: 80%;
+    padding: 15px 30px;
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     margin: 20px 0;
     background-color: antiquewhite;
 }
@@ -12,4 +11,11 @@
 .poster {
     width: 150px;
     padding: 2%;
+  }
+
+  @media (max-width: 818px) {
+      .cardFilm {
+          flex-direction: column;
+          width: 200px;
+      }
   }

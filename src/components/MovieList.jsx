@@ -8,14 +8,13 @@ const MovieList = ({ movies }) => {
   const disable = useSelector(selectID);
 
   return (
-    <div>
+    <>
       {movies?.length
         ? movies.map((m) => (
             <MovieListItem movie={m} key={m.imdbID} disable={!!disable} />
           ))
-        // : "There are no content yet..."}
         : <Loader/>}
-    </div>
+    </>
   );
 };
 

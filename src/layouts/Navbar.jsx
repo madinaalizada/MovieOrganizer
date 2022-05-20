@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 export const Navbar = () => {
   return (
-    <div>
-      <nav className="navbar navbar-dark bg-dark">
-  <div className="container-fluid">
-    <a className="navbar-brand" to="/">
-      Navbar
-    </a>
-  </div>
-</nav>
+    <div className={styles.navbar}>
+      <Link className={styles.icon} to="/">
+        Movie Organizer
+      </Link>
     </div>
-  )
-}
+  );
+};

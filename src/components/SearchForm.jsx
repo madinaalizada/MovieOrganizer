@@ -1,19 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import styles from "./SearchForm.module.css";
 
 const SearchForm = ({ onSearch }) => {
-
-    const [searchString, setSearchString] = useState('');
-
-    return (
-        <form onSubmit={onSearch}>
-            <div className="input-group mb-3 row col-5">
-                <input name='search' type="text" className="form-control" placeholder="Recipient's username" value={searchString}
-                onChange ={e => setSearchString(e.target.value)} />
-                <button className="btn btn-outline-secondary" type="submit" id="button-addon2" 
-                disabled={!searchString}>Button</button>
-            </div>
-        </form>
-    )
-}
+  const [searchString, setSearchString] = useState("");
+  return (
+    <form onSubmit={onSearch} className={styles.form}>
+      <input
+        name="search"
+        type="text"
+        className={styles.input}
+        placeholder="Search Films ..."
+        value={searchString}
+        onChange={(e) => setSearchString(e.target.value)}
+      />
+      <button
+        type="submit"
+        className={styles.button}
+        id="button-addon2"
+        disabled={!searchString}
+      >
+        Button
+      </button>
+    </form>
+  );
+};
 
 export default SearchForm;

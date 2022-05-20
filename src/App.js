@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Navbar } from './layouts/Navbar';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import MainPage from './layouts/MainPage';
-import FavoritesPage from './pages/FavoritesPage';
-import NoMatch from './pages/NoMatch';
+import React, { useState } from "react";
+import { Navbar } from "./layouts/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "./layouts/MainPage";
+import FavoritesPage from "./pages/FavoritesPage";
+import NoMatch from "./pages/NoMatch";
+import "./global.css";
 
 function App() {
-
   return (
-    <div className="">
+    <div className="container">
       <BrowserRouter>
-      <Navbar/> 
+        <Navbar />
         <Routes>
-          <Route path='/' element={<MainPage/>}/>
-          <Route path='/favorite/:id' element={<FavoritesPage/>}/>
-          <Route path='*' element={<NoMatch/>}/>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/favorite/:id" element={<FavoritesPage />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </BrowserRouter>
     </div>
