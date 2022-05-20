@@ -36,6 +36,7 @@ function Favorites() {
         className={styles.favListName}
         defaultValue="Example List"
         onChange={(e) => setListName(e.target.value)}
+        disabled={apiID.api}
       />
       <div className={styles.favList}>
         {favs.map((f) => (
