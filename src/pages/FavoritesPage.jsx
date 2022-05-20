@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import FavListItem from "../components/FavListItem";
 import { selectFavs } from "../feautures/favListSlice";
 import { selectFavName } from "../feautures/listNameSlice";
+import "./FavoritesPage.css";
 
 import Splide from "@splidejs/splide";
 
@@ -12,26 +13,20 @@ const FavoritesPage = () => {
   const listName = useSelector(selectFavName);
 
   useEffect(() => {
-    new Splide("#image-carousel").mount();
+    new Splide("#image-carousel", {
+      width: "200px",
+      height: "auto",
+    }).mount();
   }, []);
 
   return (
-    <div>
-      <h3>Your Favourites films</h3>
-      <p>{listName}</p>
-      {/* <ul>
-        {favs.map((m) => (
-          <li key={m.id}>
-            <img src={m.poster} style={{width:"50px"}}/>
-            <a href={"https://www.imdb.com/title/" + `${m.id}` + "/"} target="_blank">
-              {m.id} ---- {m.title} ----- {m.year}
-            </a>
-            <FavListItem id={m.id} title={m.title} year={m.year} poster={m.poster}/>
-          </li>
-        ))}
-      </ul> */}
-
-      <section id="image-carousel" className="splide" aria-label="Beautiful Images">
+    <div className="favContainer">
+      <h3>Your List is {listName}</h3>
+      <section
+        id="image-carousel"
+        className="splide favSlider"
+        aria-label="Beautiful Images"
+      >
         <div className="splide__track">
           <ul className="splide__list">
             {favs.map((m) => (

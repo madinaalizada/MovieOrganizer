@@ -9,7 +9,7 @@ const FavListItem = ({ id, poster, title, year }) => {
         <img src={poster} alt=""/>
       </a>
       <p>
-        {title} --- {id}
+        {title}
       </p>
       <p>{year}</p>
     </>

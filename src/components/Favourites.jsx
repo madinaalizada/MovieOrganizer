@@ -7,6 +7,7 @@ import { addFavListName } from "../feautures/listNameSlice";
 import api from "../api";
 import { Link } from "react-router-dom";
 import { setDisable } from "../feautures/saveToggle";
+import styles from "./Favourites.module.css";
 
 function Favorites() {
   const favs = useSelector((state) => state.favs);
@@ -25,39 +26,45 @@ function Favorites() {
         dispatch(addFavID(d.id));
         dispatch(addFavListName(listName));
         dispatch(setDisable());
-      })      
+      });
   };
 
   return (
-    <div className="favorites">
+    <>
       <input
         placeholder="New list name: "
-        className="favorites__name"
+        className={styles.favListName}
         defaultValue="Example List"
         onChange={(e) => setListName(e.target.value)}
       />
-      <ul className="list-group">
+      <div className={styles.favList}>
         {favs.map((f) => (
-          <li key={f.id} className="list-group-item">
-            {f.title} {f.year}
+          <div key={f.id} className={styles.favListItem}>
+            <span>
+              {f.title} {f.year}
+            </span>
             <button
               type="button"
-              className="delBtn"
+              className={styles.delBtn}
               onClick={() => {
                 dispatch(removeMovie({ id: f.id }));
               }}
             >
               X
             </button>
-          </li>
+          </div>
         ))}
-      </ul>
-      {apiID.api 
-      ?
-       <Link to= {`/favorite/${apiID.api}`} >Go to List</Link> :
-       <button onClick={handleSave} className="favorites__save">Save</button>
-      }
-    </div>
+      </div>
+      {apiID.api ? (
+        <Link to={`/favorite/${apiID.api}`} className={styles.link}>
+          Go to List
+        </Link>
+      ) : (
+        <button onClick={handleSave} className={styles.btnSave}>
+          Save
+        </button>
+      )}
+    </>
   );
 }
 

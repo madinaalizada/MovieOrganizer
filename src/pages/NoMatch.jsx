@@ -2,7 +2,10 @@ import React from 'react'
 
 const NoMatch = () => {
   return (
-    <div>NoMatch</div>
+    <div>
+      <h1>Sorry. This page not found...</h1>
+
+    </div>
   )
 }
 
