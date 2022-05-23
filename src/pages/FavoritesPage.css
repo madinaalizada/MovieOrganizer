@@ -4,10 +4,13 @@
     margin: auto;
 }
 
+.favContainer h3 {
+    margin: 10px 32%;
+}
 h3 {
     font-size: 24px;
     color: rebeccapurple;
-    margin: 10px 32%;
+    
 }
 
 .favSlider {
