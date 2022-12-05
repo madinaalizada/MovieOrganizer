@@ -50,6 +50,7 @@ function Favorites() {
               onClick={() => {
                 dispatch(removeMovie({ id: f.id }));
               }}
+              disabled={!!apiID.api}
             >
               X
             </button>

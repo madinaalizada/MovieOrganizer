@@ -1,6 +1,6 @@
 import config from "./config.json";
 const save = async (request) => {
-  const response = await fetch("http://localhost:3200/favorite", {
+  const response = await fetch("https://acb-api.algoritmika.org/api/movies/list", {
     method: "POST",
     body: JSON.stringify(request),
     headers: {

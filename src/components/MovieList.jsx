@@ -11,7 +11,9 @@ const MovieList = ({ movies }) => {
     <>
       {movies?.length
         ? movies.map((m) => (
+        <>
             <MovieListItem movie={m} key={m.imdbID} disable={!!disable} />
+        </>
           ))
         : <Loader/>}
     </>

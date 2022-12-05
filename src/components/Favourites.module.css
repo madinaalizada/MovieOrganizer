@@ -66,3 +66,7 @@
 .delBtn:hover {
   background-color: #9d0208;
 }
+
+.delBtn:disabled {
+  background-color: inherit;
+}
